@@ -1,0 +1,15 @@
+[
+null,
+{"id":1,"battlerName":"Actor1_1","characterIndex":0,"characterName":"Actor1","classId":1,"equips":[1,1,2,3,0],"faceIndex":0,"faceName":"Actor1","traits":[],"initialLevel":1,"maxLevel":99,"name":"主角","nickname":"訓練師","note":"","profile":""},
+{"id":2,"battlerName":"","characterIndex":0,"characterName":"","classId":2,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"火龍","nickname":"火寶","note":"","profile":"主角好伙伴之一"},
+{"id":3,"battlerName":"","characterIndex":0,"characterName":"","classId":3,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"烏龜","nickname":"阿龜","note":"","profile":""},
+{"id":4,"battlerName":"","characterIndex":0,"characterName":"","classId":4,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"藍寶傑尼","nickname":"噗噗","note":"","profile":""},
+{"id":5,"battlerName":"","characterIndex":0,"characterName":"","classId":5,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"蛋黃刺刺","nickname":"扎傷","note":"","profile":""},
+{"id":6,"battlerName":"","characterIndex":0,"characterName":"","classId":6,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"混亂綿羊","nickname":"咩咩","note":"","profile":""},
+{"id":7,"battlerName":"","characterIndex":0,"characterName":"","classId":7,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"龍獅獻瑞","nickname":"東隆東隆嗆","note":"","profile":""},
+{"id":8,"battlerName":"","characterIndex":0,"characterName":"","classId":8,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"咖波蟲","nickname":"咖波蟲","note":"","profile":""},
+{"id":9,"battlerName":"","characterIndex":0,"characterName":"","classId":9,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"五條悟","nickname":"五條悟","note":"","profile":""},
+{"id":10,"battlerName":"","characterIndex":0,"characterName":"","classId":10,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"鐘品傑","nickname":"Jay","note":"","profile":""},
+{"id":11,"battlerName":"","characterIndex":0,"characterName":"","classId":11,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"張宸凱","nickname":"Kai","note":"","profile":""},
+{"id":12,"battlerName":"","characterIndex":0,"characterName":"","classId":12,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"陳昱賢","nickname":"Max","note":"","profile":""}
+]
