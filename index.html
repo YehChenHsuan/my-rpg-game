@@ -16,18 +16,18 @@
                 right: 20px;
                 width: 60px;
                 height: 60px;
-                background-color: rgba(0, 0, 0, 0.8);  /* 調深顏色 */
+                background-color: rgba(0, 0, 0, 0.8);
                 color: white;
-                border: 2px solid white;  /* 添加邊框 */
+                border: 2px solid white;
                 border-radius: 50%;
                 font-size: 16px;
                 font-weight: bold;
                 cursor: pointer;
-                z-index: 99999;  /* 提高層級 */
+                z-index: 99999;
                 touch-action: manipulation;
                 -webkit-tap-highlight-color: transparent;
-                display: block !important;  /* 強制顯示 */
-                pointer-events: auto !important;  /* 確保可點擊 */
+                display: block !important;
+                pointer-events: auto !important;
             }
 
             #escButton:active {
@@ -37,7 +37,6 @@
         </style>
     </head>
     <body style="background-color: black">
-        <!-- 將按鈕移到最後，確保它在其他元素之上 -->
         <script type="text/javascript" src="js/libs/pixi.js"></script>
         <script type="text/javascript" src="js/libs/pixi-tilemap.js"></script>
         <script type="text/javascript" src="js/libs/pixi-picture.js"></script>
@@ -53,17 +52,17 @@
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
         
-        <!-- 移動到這裡 -->
         <button id="escButton">ESC</button>
 
         <script>
-            // 確保 DOM 完全加載後再添加事件監聽
             window.addEventListener('DOMContentLoaded', (event) => {
                 const escButton = document.getElementById('escButton');
-                if (escButton) {  // 檢查按鈕是否存在
-                    escButton.addEventListener('click', function() {
-                        console.log('ESC button clicked');  // 添加調試日誌
-                        const escEvent = new KeyboardEvent('keydown', {
+                if (escButton) {
+                    escButton.addEventListener('touchstart', function(e) {
+                        e.preventDefault(); // 防止觸摸事件的默認行為
+                        
+                        // 創建 keydown 事件
+                        const keydownEvent = new KeyboardEvent('keydown', {
                             key: 'Escape',
                             code: 'Escape',
                             keyCode: 27,
@@ -71,7 +70,50 @@
                             bubbles: true,
                             cancelable: true
                         });
-                        document.dispatchEvent(escEvent);
+                        
+                        // 創建 keyup 事件
+                        const keyupEvent = new KeyboardEvent('keyup', {
+                            key: 'Escape',
+                            code: 'Escape',
+                            keyCode: 27,
+                            which: 27,
+                            bubbles: true,
+                            cancelable: true
+                        });
+
+                        // 模擬按鍵按下和釋放的時間間隔
+                        document.dispatchEvent(keydownEvent);
+                        setTimeout(() => {
+                            document.dispatchEvent(keyupEvent);
+                        }, 100); // 100毫秒後釋放按鍵
+                    });
+
+                    // 為滑鼠點擊也添加相同的處理
+                    escButton.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        
+                        const keydownEvent = new KeyboardEvent('keydown', {
+                            key: 'Escape',
+                            code: 'Escape',
+                            keyCode: 27,
+                            which: 27,
+                            bubbles: true,
+                            cancelable: true
+                        });
+                        
+                        const keyupEvent = new KeyboardEvent('keyup', {
+                            key: 'Escape',
+                            code: 'Escape',
+                            keyCode: 27,
+                            which: 27,
+                            bubbles: true,
+                            cancelable: true
+                        });
+
+                        document.dispatchEvent(keydownEvent);
+                        setTimeout(() => {
+                            document.dispatchEvent(keyupEvent);
+                        }, 100);
                     });
                 }
             });
