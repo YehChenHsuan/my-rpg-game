@@ -10,15 +10,8 @@
         <link rel="stylesheet" type="text/css" href="fonts/gamefont.css">
         <title>祥澄RPG大冒險</title>
         <style>
-            #gameCanvas {
-                position: relative;
-                width: 100%;
-                height: 100vh;
-                overflow: hidden;
-            }
-            
             #escButton {
-                position: absolute;
+                position: fixed;
                 bottom: 20px;
                 right: 20px;
                 width: 60px;
@@ -44,32 +37,31 @@
         </style>
     </head>
     <body style="background-color: black">
-        <div id="gameCanvas">
-            <script type="text/javascript" src="js/libs/pixi.js"></script>
-            <script type="text/javascript" src="js/libs/pixi-tilemap.js"></script>
-            <script type="text/javascript" src="js/libs/pixi-picture.js"></script>
-            <script type="text/javascript" src="js/libs/fpsmeter.js"></script>
-            <script type="text/javascript" src="js/libs/lz-string.js"></script>
-            <script type="text/javascript" src="js/libs/iphone-inline-video.browser.js"></script>
-            <script type="text/javascript" src="js/rpg_core.js"></script>
-            <script type="text/javascript" src="js/rpg_managers.js"></script>
-            <script type="text/javascript" src="js/rpg_objects.js"></script>
-            <script type="text/javascript" src="js/rpg_scenes.js"></script>
-            <script type="text/javascript" src="js/rpg_sprites.js"></script>
-            <script type="text/javascript" src="js/rpg_windows.js"></script>
-            <script type="text/javascript" src="js/plugins.js"></script>
-            <script type="text/javascript" src="js/main.js"></script>
-            
-            <button id="escButton">ESC</button>
-        </div>
+        <script type="text/javascript" src="js/libs/pixi.js"></script>
+        <script type="text/javascript" src="js/libs/pixi-tilemap.js"></script>
+        <script type="text/javascript" src="js/libs/pixi-picture.js"></script>
+        <script type="text/javascript" src="js/libs/fpsmeter.js"></script>
+        <script type="text/javascript" src="js/libs/lz-string.js"></script>
+        <script type="text/javascript" src="js/libs/iphone-inline-video.browser.js"></script>
+        <script type="text/javascript" src="js/rpg_core.js"></script>
+        <script type="text/javascript" src="js/rpg_managers.js"></script>
+        <script type="text/javascript" src="js/rpg_objects.js"></script>
+        <script type="text/javascript" src="js/rpg_scenes.js"></script>
+        <script type="text/javascript" src="js/rpg_sprites.js"></script>
+        <script type="text/javascript" src="js/rpg_windows.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        
+        <button id="escButton">ESC</button>
 
         <script>
             window.addEventListener('DOMContentLoaded', (event) => {
                 const escButton = document.getElementById('escButton');
                 if (escButton) {
                     escButton.addEventListener('touchstart', function(e) {
-                        e.preventDefault();
+                        e.preventDefault(); // 防止觸摸事件的默認行為
                         
+                        // 創建 keydown 事件
                         const keydownEvent = new KeyboardEvent('keydown', {
                             key: 'Escape',
                             code: 'Escape',
@@ -79,6 +71,7 @@
                             cancelable: true
                         });
                         
+                        // 創建 keyup 事件
                         const keyupEvent = new KeyboardEvent('keyup', {
                             key: 'Escape',
                             code: 'Escape',
@@ -88,12 +81,14 @@
                             cancelable: true
                         });
 
+                        // 模擬按鍵按下和釋放的時間間隔
                         document.dispatchEvent(keydownEvent);
                         setTimeout(() => {
                             document.dispatchEvent(keyupEvent);
-                        }, 100);
+                        }, 100); // 100毫秒後釋放按鍵
                     });
 
+                    // 為滑鼠點擊也添加相同的處理
                     escButton.addEventListener('click', function(e) {
                         e.preventDefault();
                         
@@ -123,6 +118,7 @@
                 }
             });
 
+            // 確保按鈕在遊戲加載後仍然可見
             window.addEventListener('load', (event) => {
                 const escButton = document.getElementById('escButton');
                 if (escButton) {
@@ -132,4 +128,5 @@
             });
         </script>
     </body>
+</html>
 </html>
